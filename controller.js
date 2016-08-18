@@ -1,3 +1,7 @@
 function initializeApp(listOfTodos) {}
-function addTodo() {}
+
+function addTodo() {
+
+}
+
 function removeTodo(id) {}

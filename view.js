@@ -1,10 +1,10 @@
- function createTodoListItem(title, description) {
+function createTodoListItem(title, description) {
 
 }
 
 function createAddTodoForm() {
-var form = buildForm();
-document.body.appendChild(form);
+  var form = buildForm();
+  document.body.appendChild(form);
 }
 createAddTodoForm();
 
@@ -15,11 +15,11 @@ function buildForm() {
   var header = buildHeader();
   var title = buildTitle();
   var description = buildDescription();
-  var addButton = buildAddButton();
+//  var addButton = buildAddButton();
   containInputs.appendChild(header);
   containInputs.appendChild(title);
   containInputs.appendChild(description);
-  containInputs.appendChild(addButton);
+//  containInputs.appendChild(addButton);
   return containInputs;
 }
 
@@ -57,5 +57,7 @@ function buildAddButton() {
   inputAdd.value = "Add";
   var textButton = document.createTextNode("Add");
   inputAdd.appendChild(textButton);
+  document.body.appendChild(inputAdd);
 return inputAdd;
 }
+buildAddButton();
