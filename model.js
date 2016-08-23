@@ -1,1 +1,1 @@
-var listOfTodos = []
+var listOfTodos = [];

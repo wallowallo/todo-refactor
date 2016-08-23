@@ -1,1 +1,1 @@
-function initializeApp() {}
+//initializeApp();

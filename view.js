@@ -1,5 +1,26 @@
-function createTodoListItem(title, description) {
+var title = document.querySelector(".title");
+var description = document.querySelector(".description");
 
+function createTodoListItem(title, description) {
+  var newDiv = document.createElement("div");
+    newDiv.className = "todoList"
+    newDiv.id = new Date().getTime()
+    newDiv.innerHTML = title + "<br>" + description;
+    var deleteButton = buildDeleteButton();
+    deleteButton.addEventListener("click",() => document.body.removeChild(newDiv));
+    newDiv.appendChild(deleteButton);
+    return newDiv;
+}
+function buildDeleteButton() {
+  var newButton = document.createElement("input");
+       newButton.type = "button";
+       newButton.className = "removeTodo"
+       newButton.value = "X"
+       return newButton;
+}
+
+function constructTodos(title, description) {
+var newTodo = { title: title, description: title };
 }
 
 function createAddTodoForm() {
