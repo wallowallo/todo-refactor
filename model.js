@@ -1,1 +1,3 @@
-var listOfTodos = [];
+var listOfTodos = [
+  {title: "", description: ""}
+];

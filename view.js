@@ -1,13 +1,16 @@
-var title = document.querySelector(".title");
-var description = document.querySelector(".description");
+var reset = () => {
+  input1.value = "";
+  input2.value = "";
+}
+// function formIsValid() {
+//   return input1.value !== "" || input2.value !== "";
+// }
 
 function createTodoListItem(title, description) {
   var newDiv = document.createElement("div");
     newDiv.className = "todoList"
-    newDiv.id = new Date().getTime()
     newDiv.innerHTML = title + "<br>" + description;
     var deleteButton = buildDeleteButton();
-    deleteButton.addEventListener("click",() => document.body.removeChild(newDiv));
     newDiv.appendChild(deleteButton);
     return newDiv;
 }
@@ -27,7 +30,6 @@ function createAddTodoForm() {
   var form = buildForm();
   document.body.appendChild(form);
 }
-createAddTodoForm();
 
 
 function buildForm() {
@@ -36,11 +38,9 @@ function buildForm() {
   var header = buildHeader();
   var title = buildTitle();
   var description = buildDescription();
-//  var addButton = buildAddButton();
   containInputs.appendChild(header);
   containInputs.appendChild(title);
   containInputs.appendChild(description);
-//  containInputs.appendChild(addButton);
   return containInputs;
 }
 
@@ -74,11 +74,10 @@ function buildAddButton() {
   var inputAdd = document.createElement("button");
   inputAdd.className = "addButton";
   inputAdd.type = "submit"
-  inputAdd.onclick = "addTodo()";
+  inputAdd.onclick =  addTodo;
   inputAdd.value = "Add";
   var textButton = document.createTextNode("Add");
   inputAdd.appendChild(textButton);
   document.body.appendChild(inputAdd);
 return inputAdd;
 }
-buildAddButton();
