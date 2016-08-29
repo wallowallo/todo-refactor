@@ -1,15 +1,7 @@
-var reset = () => {
-  input1.value = "";
-  input2.value = "";
-}
-// function formIsValid() {
-//   return input1.value !== "" || input2.value !== "";
-// }
-
 function createTodoListItem(title, description) {
   var newDiv = document.createElement("div");
     newDiv.className = "todoList"
-    newDiv.innerHTML = title + "<br>" + description;
+    newDiv.innerHTML = title + "<br>" + "<br>" + "<br>" + description;
     var deleteButton = buildDeleteButton();
     newDiv.appendChild(deleteButton);
     return newDiv;
