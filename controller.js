@@ -1,8 +1,7 @@
+function initializeApp(listOfTodos) {
+}
 createAddTodoForm();
 buildAddButton();
-function initializeApp(listOfTodos) {
-
-}
 
 function addTodo() {
   var input1 = document.querySelector(".title");

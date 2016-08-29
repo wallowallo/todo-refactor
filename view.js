@@ -1,7 +1,10 @@
 function createTodoListItem(title, description) {
   var newDiv = document.createElement("div");
     newDiv.className = "todoList"
-    newDiv.innerHTML = title + "<br>" + "<br>" + "<br>" + description;
+    var todo = { title: title, description: description }
+    listOfTodos.push(todo)
+    console.log(listOfTodos)
+    newDiv.innerHTML = todo.title + "<br>" + "<br>" + "<br>" + todo.description;
     var deleteButton = buildDeleteButton();
     newDiv.appendChild(deleteButton);
     return newDiv;
