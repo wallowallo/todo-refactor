@@ -1,1 +1,1 @@
-initializeApp();
+initializeApp(listOfTodos);

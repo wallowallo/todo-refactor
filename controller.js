@@ -2,10 +2,11 @@ function initializeApp(listOfTodos) {
   createAddTodoForm();
   buildAddButton();
   for (var i = 0; i < listOfTodos.length; i++) {
-    createTodoListItem(listOfTodos[i].name, listOfTodos[i].description);
-    // var newDiv = createTodoListItem();
-    // newDiv.innerHTML += (listOfTodos[i].title + "<br>" + listOfTodos[i].description);
+    var newDiv = createTodoListItem();
+    newDiv.innerHTML = createTodoListItem(listOfTodos[i].title, listOfTodos[i].description);
     document.body.appendChild(newDiv);
+    var deleteButton = buildDeleteButton();
+    newDiv.appendChild(deleteButton);
   }
 }
 
