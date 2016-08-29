@@ -1,29 +1,15 @@
-function createTodoListItem(title, description) {
+function createTodoListItem() {
   var newDiv = document.createElement("div");
     newDiv.className = "todoList"
-    var todo = { title: title, description: description }
-    listOfTodos.push(todo)
-    console.log(listOfTodos)
-    newDiv.innerHTML = todo.title + "<br>" + "<br>" + "<br>" + todo.description;
-    var deleteButton = buildDeleteButton();
-    newDiv.appendChild(deleteButton);
     return newDiv;
 }
+
 function buildDeleteButton() {
   var newButton = document.createElement("input");
        newButton.type = "button";
        newButton.className = "removeTodo"
        newButton.value = "X"
        return newButton;
-}
-
-function constructTodos(title, description) {
-var newTodo = { title: title, description: title };
-}
-
-function createAddTodoForm() {
-  var form = buildForm();
-  document.body.appendChild(form);
 }
 
 
