@@ -4,10 +4,7 @@ function initializeApp(listOfTodos) {
    var newDiv = document.querySelector("todoList");
    for (var i = 0; i < listOfTodos.length; i++) {
      document.body
-     .appendChild(createTodoListItem(
-       listOfTodos[i].title,
-       listOfTodos[i].description
-     ));
+     .appendChild(createTodoListItem(listOfTodos[i]));
   //   newDiv.id = "divTodo" + i;
    }
    console.log(listOfTodos);
@@ -25,15 +22,20 @@ function addTodo() {
     //  listOfTodos.push(todo);
     //  newDiv.innerHTML = todo.title + "<br>" + "<br>" + "<br>" + todo.description;
     //}
-    listOfTodos.push({ title: input1.value, description: input2.value });
-    document.body
-    .appendChild(createTodoListItem(
-      input2.value,
-      input2.value
-    ));
+    var item = {
+      title: input1.value,
+      description: input2.value,
+      id: generateUniqueId()
+    };
+    listOfTodos.push(item);
+    document.body.appendChild(createTodoListItem(item));
     input1.value = "";
     input2.value = "";
     console.log(listOfTodos);
   }
   //initializeApp(listOfTodos);
+}
+
+function generateUniqueId() {
+  return new Date().getMilliseconds();
 }

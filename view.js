@@ -1,11 +1,10 @@
 //  - creates a new div with a classname todolist
 //  - it adds the todolist item information to the div
 //  - it assigns an id to the div
-function createTodoListItem(title, description) {
+function createTodoListItem(item) {
   var newDiv = document.createElement("div");
-  var todo = { title: title, description: description };
   var deleteButton = buildDeleteButton();
-  newDiv.innerHTML = todo.title + "<br>" + "<br>" + "<br>" + todo.description;
+  newDiv.innerHTML = item.title + "<br>" + "<br>" + "<br>" + item.description;
   newDiv.className = "todoList";
   deleteButton.addEventListener("click",() => document.body.removeChild(newDiv) );
   newDiv.appendChild(deleteButton);
