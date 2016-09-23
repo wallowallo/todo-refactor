@@ -17,17 +17,12 @@ function createTodoListItem(item) {
   return newDiv;
 }
 
-function createAddTodoForm() {
-  var form = buildForm();
-  document.body.appendChild(form);
-}
-
 function buildDeleteButton() {
   var newButton = document.createElement("input");
-       newButton.type = "button";
-       newButton.className = "removeTodo"
-       newButton.value = "X"
-       return newButton;
+  newButton.type = "button";
+  newButton.className = "removeTodo"
+  newButton.value = "X"
+  return newButton;
 }
 
 
@@ -74,9 +69,7 @@ function buildAddButton() {
   inputAdd.className = "addButton";
   inputAdd.type = "submit"
   inputAdd.onclick =  addTodo;
-  inputAdd.value = "Add";
   var textButton = document.createTextNode("Add");
   inputAdd.appendChild(textButton);
-  document.body.appendChild(inputAdd);
-return inputAdd;
+  return inputAdd;
 }
