@@ -1,5 +1,6 @@
 function initializeApp(listOfTodos) {
   document.body.appendChild(buildForm());
+  console.log(buildForm());
   document.body.appendChild(buildAddButton());
    var newDiv = document.querySelector("todoList");
    for (var i = 0; i < listOfTodos.length; i++) {

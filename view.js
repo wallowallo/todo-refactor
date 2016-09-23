@@ -18,58 +18,24 @@ function createTodoListItem(item) {
 }
 
 function buildDeleteButton() {
-  var newButton = document.createElement("input");
-  newButton.type = "button";
-  newButton.className = "removeTodo"
-  newButton.value = "X"
-  return newButton;
+  var s = '<input type="button" class="removeTodo" value="X">';
+  return buildTemplate(s);
 }
 
 
 function buildForm() {
-  var containInputs = document.createElement("form")
-  containInputs.className = "containInputs";
-  var header = buildHeader();
-  var title = buildTitle();
-  var description = buildDescription();
-  containInputs.appendChild(header);
-  containInputs.appendChild(title);
-  containInputs.appendChild(description);
-  return containInputs;
-}
-
-function buildHeader() {
-  var h2 = document.createElement("h2")
-  h2.className = "header";
-  h2.value = "Todo:";
-  var textH2 = document.createTextNode("Todo:");
-  h2.appendChild(textH2);
-  return h2;
-}
-
-function buildTitle() {
-  var inputTitle = document.createElement("input")
-  inputTitle.type = "text";
-  inputTitle.className = "title";
-  inputTitle.placeholder = "Title";
-  inputTitle.maxlength = "20"
-  return inputTitle;
-}
-
-function buildDescription() {
-  var inputDescription = document.createElement("input")
-  inputDescription.className = "description";
-  inputDescription.placeholder = "Description";
-  inputDescription.maxlength = "40"
-  return inputDescription;
+  const form = `<form class="containInputs">
+    <h2 class="header">Todo:</h2>
+    <input type="text" class="title" placeholder="Title" maxlength="20">
+    <input type="text" class="description" placeholder="Description" maxlength="40">
+  </form>`;
+  return buildTemplate(form);
 }
 
 function buildAddButton() {
-  var inputAdd = document.createElement("button");
-  inputAdd.className = "addButton";
-  inputAdd.type = "submit"
-  inputAdd.onclick =  addTodo;
-  var textButton = document.createTextNode("Add");
-  inputAdd.appendChild(textButton);
-  return inputAdd;
+  var str = "Add";
+  const element = buildTemplate(`<button class="addButton"
+                                         type="Submit">${str}</button>`);
+  element.onclick = addTodo;
+  return element;
 }
