@@ -6,7 +6,13 @@ function createTodoListItem(item) {
   var deleteButton = buildDeleteButton();
   newDiv.innerHTML = item.title + "<br>" + "<br>" + "<br>" + item.description;
   newDiv.className = "todoList";
-  deleteButton.addEventListener("click",() => document.body.removeChild(newDiv) );
+  deleteButton.addEventListener("click",() => {
+    document.body.removeChild(newDiv)
+    var toBeDeleted = listOfTodos.filter(function(element) {
+      return element.id === item.id;
+    });
+    listOfTodos.splice(listOfTodos.indexOf(toBeDeleted[0]), 1);
+  }  );
   newDiv.appendChild(deleteButton);
   return newDiv;
 }
